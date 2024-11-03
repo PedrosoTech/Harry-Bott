@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://i.pinimg.com/originals/df/3a/58/df3a58aa36211c15e6ecf89dc585261d.gif') center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.welcome-container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    animation: fadeIn 1s ease-in;
+}
+
+.content {
+    max-width: 600px;
+}
+
+h1 {
+    color: #800000;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.magic-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #800000, #5c0000);
+    color: #FFD700;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.magic-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(128, 0, 0, 0.4);
+}
+
+.wand-spark {
+    position: absolute;
+    background: radial-gradient(circle, #FFD700, transparent);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.magic-button:hover .wand-spark {
+    animation: sparkle 1s infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(200%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .welcome-container {
+        margin: 20px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .magic-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+} 
